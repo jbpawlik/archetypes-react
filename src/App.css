@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+
+
+
+.App-background {
+  background-size: contain;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-container {
+  background-image: url("./assets/images/woodgrain.jpg");
+  background-repeat: repeat;
+  background-size: contain;
+  display:inline-flex;
+  flex-grow: 1;
+  background-color: black;
+  z-index: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-title {
+  font-size: 200px;
+  font-weight: 900px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* align-items: center; */
+  color: rgb(249, 238, 18);
 }
 
-.App-link {
-  color: #61dafb;
+.main-console{
+  background-image: url("./assets/images/selfsimulator3.jpg");
+  background-size: cover;
+  background-color: transparent;
+  /* height: 100vh; */
+  /* width: fit-content; */
+  /* display: flex; */
+  /* flex-grow: 1; */
+ justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  /* border: solid black 2vh; */
+  position: absolute;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.leftSideButton {
+  background-color: transparent;
+  /* border: solid black 2vh; */
+  /* height: '100%';
+  width: 55vh; */
+  /* position: absolute; */
+  /* opacity: 0; */
+}
+
+.rightSideButton {
+  background-color: transparent;
+  /* border: solid black 2vh; */
+  /* height: '100%'; */
+  /* width: 55vh; */
+  /* position: absolute; */
+  /* opacity: 0; */
 }
