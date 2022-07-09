@@ -1,17 +1,19 @@
 import '../App.css';
 import React, {useState, useEffect} from 'react'
-import {useWindowDimensions} from '../functions/getWindowDimensions.js';
+// import {useWindowDimensions} from '../functions/getWindowDimensions.js';
 import $ from 'jquery'
 import {imagesArray} from '../assets/images/imagesArray.js'
+import useSound from 'use-sound';
+import tap from '../assets/sounds/tap.wav'
 
 function SelfSimulator() {
-  const { height, width } = useWindowDimensions();
-  const [imageSelected, setSelectedImage] = useState(imagesArray[2])
+  // const { height, width } = useWindowDimensions();
+  const [imageSelected, setSelectedImage] = useState(imagesArray[8])
   const [leftButtonPressed, pressLeftButton] = useState(false)
   const [rightButtonPressed, pressRightButton] = useState(false)
+  const [play] = useSound(tap)
 
   useEffect(() => {
-
     if (leftButtonPressed === false && rightButtonPressed === false) {
       setSelectedImage(imagesArray[2])
     } else if (leftButtonPressed === true && rightButtonPressed === false) {
@@ -22,7 +24,7 @@ function SelfSimulator() {
       setSelectedImage(imagesArray[3])
     }
     $('.main-console').css('background-image', `url("${imageSelected}")`)
-
+    play()
     // setSelectedImage(imageSelected)
 
     return () => {
@@ -32,7 +34,6 @@ function SelfSimulator() {
   
 
   const switchImage = (num) => {
-
     if (num === 0 && leftButtonPressed === false) {
       pressLeftButton(true)
       // $('.Left-text').css('display', 'none')
@@ -56,17 +57,15 @@ function SelfSimulator() {
   return (
       <>
         <div className="main-console">
-        <div>
-          {/* <h1 className="App-title" onClick={() => $('.App-title').css('display', 'none') }>ARCHETYPES</h1> */}
-          {/* <h2 className="Left-text">ASK</h2>
-          <h2 className="Right-text">ANSWER</h2> */}
-        </div>
-        <div style={{display: 'flex'}}>
-          <div className='leftSideButton' style={{height: '100%', width: '50%', left: 0}} onClick={()=>{switchImage(0)}}></div>
-          <div className='rightSideButton' style={{height: height, width: width/2, right: 0}} onClick={()=>{switchImage(1)}}>
+          <div>
+
+            {/* <h2 className="Left-text">ASK</h2>
+            <h2 className="Right-text">ANSWER</h2> */}
+          </div>
+            <div className='leftSideButton' onClick={()=>{switchImage(0)}}></div>
+            <div className='rightSideButton' onClick={()=>{switchImage(1)}}>
           </div>
         </div>
-      </div>
   </>
   );
 }
