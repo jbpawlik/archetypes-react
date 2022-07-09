@@ -1,58 +1,85 @@
+:root {
+  --main-gold: rgb(255, 225, 33);
+}
 
-
+html {
+  background-color: black;
+}
 
 .App-background {
-  background-size: contain;
+  border: solid var(--main-gold) .2vh;
+  border-radius: 5px;
+  /* background-color: black; */
+  /* background-size: contain; */
+  /* display: flex; */
 }
+
+/* .woodenBox {
+  display: flex;
+  justify-content: center;
+} */
 
 .App-container {
   background-image: url("./assets/images/woodgrain.jpg");
   background-repeat: repeat;
-  background-size: contain;
-  display:inline-flex;
-  flex-grow: 1;
-  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  /* background-size: contain; */
+  display:flex;
+  /* flex-grow: 1; */
+  /* background-color: black; */
   z-index: 1;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-title {
-  font-size: 200px;
-  font-weight: 900px;
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  color: rgb(249, 238, 18);
+  font-size: 20px;
+  font-weight: 900;
+  /* background-size: cover; */
+  color: rgba(249, 237, 18, 0.801);
 }
 
 .main-console{
+  border: solid var(--main-gold) .2vh;
+  border-radius: 5px;
   background-image: url("./assets/images/selfsimulator3.jpg");
-  background-size: cover;
+  background-size: contain;
   background-color: transparent;
-  /* height: 100vh; */
-  /* width: fit-content; */
-  /* display: flex; */
+  display: flex;
+  height: 33.4%;
+  width: 50%;
   /* flex-grow: 1; */
- justify-content: center;
+  justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
-  /* border: solid black 2vh; */
-  position: absolute;
+  /* position: absolute; */
 }
 
 .leftSideButton {
   background-color: transparent;
-  /* border: solid black 2vh; */
-  /* height: '100%';
-  width: 55vh; */
-  /* position: absolute; */
-  /* opacity: 0; */
+  min-height: 100%;
+  min-width: 50%;
+  z-index: 4;
 }
 
 .rightSideButton {
   background-color: transparent;
-  /* border: solid black 2vh; */
-  /* height: '100%'; */
-  /* width: 55vh; */
-  /* position: absolute; */
-  /* opacity: 0; */
+  z-index: 4;
+  min-width: 50%;
+  min-height: 100%;
 }
+
+/* .Left-text {
+  display: none;
+  left: 16vh;
+  position: absolute;
+  color: rgba(249, 237, 18, 0.801);
+}
+
+.Right-text {
+  display: none;
+  right: 8vh;
+  position: absolute;
+  color: rgba(249, 237, 18, 0.801);
+} */
