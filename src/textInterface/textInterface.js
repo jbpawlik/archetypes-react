@@ -1,10 +1,10 @@
 import chalk from 'chalk';
 // import nodemon from 'nodemon';
 import rs from 'readline-sync';
-import {archetypes16} from './objectLists/archetypes16.js';
-import { questionList16 } from './objectLists/questionList16.js'
-import areEqual from './functions/areEqual.js'
-import haveMatches from './functions/haveMatches.js';
+import {archetypes16} from '../objectLists/archetypes16.js';
+import {questionList16} from '../objectLists/questionList16.js'
+import areEqual from '../functions/areEqual.js'
+import haveMatches from '../functions/haveMatches.js';
 
 let playGame = true
 

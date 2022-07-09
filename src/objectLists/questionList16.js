@@ -37,7 +37,7 @@ export const questionList16 = [
   },
   {
     number: 7,
-    question: 'Do you like to dive deeply into the context behind things?',
+    question: 'Do you want to preserve the past?',
     answer: '',
     traits: [ 'solo', 'nostalgia', 'passive', 'specific' ]
   },
@@ -49,7 +49,7 @@ export const questionList16 = [
   },
   {
     number: 9,
-    question: 'Do you like to make lists of your favorite art and culture?',
+    question: 'Do you like to make "playlists" of your favorite music, movies, or other artistic media?',
     answer: '',
     traits: [ 'solo', 'novelty', 'active', 'general' ]
   },
@@ -67,7 +67,7 @@ export const questionList16 = [
   },
   {
     number: 12,
-    question: 'Do you like working with others to improve the world?',
+    question: 'Do you work with others to improve the world?',
     answer: '',
     traits: [ 'social', 'nostalgia', 'active', 'general' ]
   },
@@ -91,7 +91,7 @@ export const questionList16 = [
   },
   {
     number: 16,
-    question: 'Do you feel better when you are serving a greater purpose?',
+    question: 'Do you feel that you have a purpose in life?',
     answer: '',
     traits: [ 'social', 'nostalgia', 'passive', 'general' ]
   }
