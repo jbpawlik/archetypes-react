@@ -6,8 +6,9 @@ import selfsimulator5 from './selfsimulator5.jpg';
 import selfsimulator6 from './selfsimulator6.jpg';
 import selfsimulator7 from './selfsimulator7.jpg';
 import selfsimulator8 from './selfsimulator8.jpg';
+import woodgrain from './woodgrain.jpg';
 
-export const imagesArray = [selfsimulator1, selfsimulator2, selfsimulator3, selfsimulator4, selfsimulator5, selfsimulator6, selfsimulator7, selfsimulator8];
+export const imagesArray = [selfsimulator1, selfsimulator2, selfsimulator3, selfsimulator4, selfsimulator5, selfsimulator6, selfsimulator7, selfsimulator8, woodgrain];
 
  // const images = ['./assets/images/selfsimulator1.jpg', './assets/images/selfsimulator2.jpg', './assets/images/selfsimulator3.jpg', './assets/images/selfsimulator4.jpg', './assets/images/selfsimulator5.jpg', './assets/images/selfsimulator6.jpg', './assets/images/selfsimulator7.jpg', './assets /images/selfsimulator8.jpg'
   // ], data = [];
