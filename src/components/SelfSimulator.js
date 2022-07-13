@@ -5,16 +5,32 @@ import $ from 'jquery'
 import {imagesArray} from '../assets/images/imagesArray.js'
 import useSound from 'use-sound';
 import tap from '../assets/sounds/tap.wav'
+import woodTap from '../assets/sounds/woodtap.wav'
 
-function SelfSimulator() {
+function SelfSimulator({titleRemoved}) {
   // const { height, width } = useWindowDimensions();
+  const [clicked, setClicked] = useState(false)
+  const [clickToggle, toggleClick] = useState(false)
   const [imageSelected, setSelectedImage] = useState(imagesArray[8])
   const [leftButtonPressed, pressLeftButton] = useState(false)
   const [rightButtonPressed, pressRightButton] = useState(false)
-  const [play] = useSound(tap)
+  const [counter, setCounter] = useState(0)
+  const [playTap] = useSound(tap)
+  const [playWoodTap] = useSound(woodTap)
 
   useEffect(() => {
-    if (leftButtonPressed === false && rightButtonPressed === false) {
+    if (!titleRemoved && counter === 0) {
+      setSelectedImage(imagesArray[8])
+    } else if (imageSelected === imagesArray[8] && !clicked && clickToggle) {
+      toggleClick(true)
+    } else if (!clicked && clickToggle && counter === 1) {
+      setSelectedImage(imagesArray[2])
+      setClicked(true)
+      // setCounter(2)
+    } else if (clicked && clickToggle && counter === 2) {
+      setSelectedImage(imagesArray[2])
+      setClicked(false)
+    } else if (leftButtonPressed === false && rightButtonPressed === false) {
       setSelectedImage(imagesArray[2])
     } else if (leftButtonPressed === true && rightButtonPressed === false) {
       setSelectedImage(imagesArray[0])
@@ -24,25 +40,27 @@ function SelfSimulator() {
       setSelectedImage(imagesArray[3])
     }
     $('.main-console').css('background-image', `url("${imageSelected}")`)
-    play()
     // setSelectedImage(imageSelected)
 
     return () => {
 
     }
-  }, [imageSelected, leftButtonPressed, rightButtonPressed])
+  }, [ clicked, clickToggle, counter, imageSelected, leftButtonPressed, rightButtonPressed])
   
 
   const switchImage = (num) => {
+    if (counter === 0) {
+      setCounter(1)
+      playWoodTap()
+    } 
+    if (titleRemoved && counter === 1) {
+    playTap()
     if (num === 0 && leftButtonPressed === false) {
       pressLeftButton(true)
       // $('.Left-text').css('display', 'none')
-
     } else if (num === 0 && leftButtonPressed === true) {
       pressLeftButton(false)
       // $('.Left-text').css('display', 'block')
-
-
     }
     if (num === 1 && rightButtonPressed === false) {
       pressRightButton(true)
@@ -52,13 +70,12 @@ function SelfSimulator() {
       pressRightButton(false)
       // $('.Right-text').css('display', 'block')
     }
-  }
+  }}
 
   return (
       <>
         <div className="main-console">
           <div>
-
             {/* <h2 className="Left-text">ASK</h2>
             <h2 className="Right-text">ANSWER</h2> */}
           </div>
