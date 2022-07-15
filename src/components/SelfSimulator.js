@@ -1,4 +1,4 @@
-import '../App.css';
+import '../css/App.css';
 import React, {useState, useEffect} from 'react'
 // import {useWindowDimensions} from '../functions/getWindowDimensions.js';
 import $ from 'jquery'
