@@ -5,6 +5,10 @@ import {archetypes16} from '../objectLists/archetypes16.js';
 import {questionList16} from '../objectLists/questionList16.js'
 import areEqual from '../functions/areEqual.js'
 import haveMatches from '../functions/haveMatches.js';
+// import { playerContext } from '../components/playerContext.js';
+// import React, {useContext} from 'react';
+
+export default function TextInterface() {
 
 let playGame = true
 
@@ -46,13 +50,13 @@ while (playGame) {
       limit: ['Yes', 'Y', 'yes', 'y', 'No', 'N', 'no', 'n'],
       limitMessage: 'Yes or no, please.'
     })
-    if (response == 'Y' | response == 'y' | response == 'Yes' | response == 'yes') {
+    if (response === 'Y' | response === 'y' | response === 'Yes' | response === 'yes') {
       questionList16[i].answer = 'Y'
       playerAttributes.push(questionList16[i].traits[0])
       playerAttributes.push(questionList16[i].traits[1])
       playerAttributes.push(questionList16[i].traits[2])
       playerAttributes.push(questionList16[i].traits[3])
-    } else if (response == 'N' | response == 'n' | response == 'No' | response == 'no') {
+    } else if (response === 'N' | response === 'n' | response === 'No' | response === 'no') {
       questionList16[i].answer = 'N'
     }
     response = ''
@@ -78,7 +82,7 @@ while (playGame) {
       limit: ['Yes', 'Y', 'yes', 'y', 'No', 'N', 'no', 'n'],
       limitMessage: 'Yes or no, please'
     })
-    if (response == 'Y' | response == 'y' | response == 'Yes' | response == 'yes') {
+    if (response === 'Y' | response === 'y' | response === 'Yes' | response === 'yes') {
       playerArchetype.push('solo')
       playerOpposite.push('social')
     } else {
@@ -99,7 +103,7 @@ while (playGame) {
       limit: ['Yes', 'Y', 'yes', 'y', 'No', 'N', 'no', 'n'],
       limitMessage: 'Yes or no, please'
     })
-    if (response == 'Y' | response == 'y' | response == 'Yes' | response == 'yes') {
+    if (response === 'Y' | response === 'y' | response === 'Yes' | response === 'yes') {
       playerArchetype.push('novelty')
       playerOpposite.push('nostalgia')
     } else {
@@ -120,7 +124,7 @@ while (playGame) {
       limit: ['Yes', 'Y', 'yes', 'y', 'No', 'N', 'no', 'n'],
       limitMessage: 'Yes or no, please'
     })
-    if (response == 'Y' | response == 'y' | response == 'Yes' | response == 'yes') {
+    if (response === 'Y' | response === 'y' | response === 'Yes' | response === 'yes') {
       playerArchetype.push('active')
       playerOpposite.push('passive')
     } else {
@@ -140,7 +144,7 @@ while (playGame) {
       limit: ['Yes', 'Y', 'yes', 'y', 'No', 'N', 'no', 'n'],
       limitMessage: 'Yes or no, please'
     })
-    if (response == 'Y' | response == 'y' | response == 'Yes' | response == 'yes') {
+    if (response === 'Y' | response === 'y' | response === 'Yes' | response === 'yes') {
       playerArchetype.push('general')
       playerOpposite.push('specific')
     } else {
@@ -150,8 +154,6 @@ while (playGame) {
   }
 
   rs.question()
-
-  
 
   let friendArchetypes = []
 
@@ -167,7 +169,7 @@ while (playGame) {
 
   for(let i = 0; i <= 15; i++) {
     let archetypeArray = archetypes16[i].traits
-    if (haveMatches(archetypeArray, playerArchetype) == 3) {
+    if (haveMatches(archetypeArray, playerArchetype) === 3) {
       friendArchetypes.push(archetypes16[i])
     }
   }
@@ -188,7 +190,7 @@ while (playGame) {
 
   let playAgain = rs.question(`\n\nRediscover yourself, ${playerName}? `)
 
-  if (playAgain == 'Y' | playAgain == 'y' | playAgain == 'Yes' | playAgain == 'yes') {
+  if (playAgain === 'Y' | playAgain === 'y' | playAgain === 'Yes' | playAgain === 'yes') {
     console.log(` \n \n \n `)
     rs.question()
   } else {
@@ -196,3 +198,5 @@ while (playGame) {
     break
   }
 }
+}
+TextInterface();
