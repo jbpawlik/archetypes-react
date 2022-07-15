@@ -1,4 +1,4 @@
-import './App.css';
+import './css/App.css';
 import React, {useState } from 'react'
 import SelfSimulator from './components/SelfSimulator.js'
 import $ from 'jquery'
@@ -18,22 +18,6 @@ function App() {
   const [intro] = useSound(woodclack)
   const [titleRemoved, removeTitle] = useState(false)
   const [playerProfile, setPlayerProfile] = useState({}) 
-
-  // const scriptFile = $.getScript('../src/textInterface/textInterface.js')
-
-  // console.log(scriptFile)
-
-  // document.addEventListener("DOMContentLoaded", function() {
-  //   console.log(TextInterface());
-  // });
-
-  // const script = document.createElement('script');
-  // script.type = 'text/babel';
-  // script.src = '../src/textInterface/textInterface.js';
-  // document.head.appendChild(script);
-
-  // fetch("../src/textInterface/textInterface.js")
-  // .then((response) => console.log(response))
 
   const clickTitle = () => {
     if (!titleRemoved) {
@@ -61,12 +45,13 @@ const dispatchPlayerProfile = (actionType, payload) => {
   return (<>
     <playerContext.Provider value={{playerProfile, dispatchPlayerProfile}}>
       <div className="App-background">
-        <CommandLineTerminal/>
-        <div className="App-container" onClick={() => clickTitle()}>
+      <CommandLineTerminal />
+
+        {/* <div className="App-container" onClick={() => clickTitle()}>
         <h1 className="App-title">ARCHETYPES</h1>
           <SelfSimulator titleRemoved={titleRemoved}/>
-        </div>
-      </div>
+        </div> */}
+     </div>
     </playerContext.Provider>
   </>
   );
