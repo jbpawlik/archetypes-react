@@ -11,8 +11,6 @@ import haveMatches from '../functions/haveMatches.js'
 // import xtermTheme from 'xterm-theme';
 import '../css/xterm.css';
 import 'chalkie';
-// import archetypesText from '../objectLists/archtypesText.js';
-// import ptyServer from '../components/ptyServer.js'
 // import {openpty} from 'xterm-pty';
 import {readline} from '../components/readlineInterface.js'
 import term from '../components/xterm.js';
