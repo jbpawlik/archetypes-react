@@ -45,7 +45,7 @@ const dispatchPlayerProfile = (actionType, payload) => {
   return (<>
     <playerContext.Provider value={{playerProfile, dispatchPlayerProfile}}>
       <div className="App-background">
-      <CommandLineTerminal />
+        <CommandLineTerminal />
 
         {/* <div className="App-container" onClick={() => clickTitle()}>
         <h1 className="App-title">ARCHETYPES</h1>
