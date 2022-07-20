@@ -91,6 +91,7 @@ html {
     /* background-repeat: no-repeat; */
   justify-content: center;
   align-items: center;
+  /* width: 100vw; */
   /* background-color: var(--main-gold); */
   /* background-size: contain; */
   display:flex;
